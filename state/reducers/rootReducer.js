@@ -3,7 +3,7 @@ const rootReducer = (state, action) => {
     case "UPDATE_ARTICLE_INDEX":
       return {
         ...state,
-        articles: action.payload,
+        articles: action.payload.articles,
       };
     default:
       return state;
