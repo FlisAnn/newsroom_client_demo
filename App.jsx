@@ -1,11 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
+import { useSelector} from 'react-redux'
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
+ const App = () => {
+   const {appTitle} = useSelector(state => state)
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>{appTitle}</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -14,8 +16,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#e49599',
     alignItems: 'center',
     justifyContent: 'center',
+    fontSize: 30,
   },
+ 
 });
+export default App
