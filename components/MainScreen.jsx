@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
 });
 
 const MainScreen = () => {
-  const { appTitle } = useSelector((state) => state);
+  const { appTitle, articles } = useSelector((state) => state);
   return (
     <View style={styles.container}>
       <Text>{appTitle}</Text>
