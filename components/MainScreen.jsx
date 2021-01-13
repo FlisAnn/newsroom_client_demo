@@ -1,8 +1,9 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
 import { useSelector } from "react-redux";
 import { StyleSheet, Text, View, FlatList } from "react-native";
-import Articles from '../modules/Articles'
+import Articles from "../modules/Articles";
+import ArticleIndexDetails from "./ArticleIndexDetails";
 
 const styles = StyleSheet.create({
   container: {
@@ -13,15 +14,17 @@ const styles = StyleSheet.create({
 
 const MainScreen = () => {
   const { articles } = useSelector((state) => state);
-  useEffect(() => { Articles.index() }, [articles])
+  useEffect(() => {
+    Articles.index();
+  }, [articles]);
   return (
     <View style={styles.container}>
-      <StatusBar style="auto"/>
-      
+      <StatusBar style="auto" />
       <FlatList
-      data={articles}
-      keyExtractor={(item) => item.id.toString()}
-      renderItem={({ item }) => <Text>{item.title}</Text>}/>
+        data={articles}
+        keyExtractor={(item) => item.id.toString()}
+        renderItem={({ item }) => <ArticleIndexDetails article={item}/>}
+      />
     </View>
   );
 };
