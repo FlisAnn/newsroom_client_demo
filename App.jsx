@@ -25,6 +25,11 @@ const App = () => {
             },
           }}
         />
+        <Stack.Screen 
+        name="ArticleShow"
+        component={ArticleShow}>
+
+        </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );
