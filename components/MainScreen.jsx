@@ -12,11 +12,11 @@ const styles = StyleSheet.create({
   },
 });
 
-const MainScreen = (navigation) => {
+const MainScreen = ({navigation}) => {
   const { articles } = useSelector((state) => state);
   useEffect(() => {
     Articles.index();
-  }, [articles]);
+  }, []);
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
