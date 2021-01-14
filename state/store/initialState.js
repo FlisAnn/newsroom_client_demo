@@ -1,6 +1,7 @@
 const initialStore = {
   appTitle: "Pip & Mio News",
-  articles: []
+  articles: [],
+  currentArticle: {}
 }
 
 export default initialStore

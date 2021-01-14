@@ -1,24 +1,24 @@
 import React from "react";
-import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Dimensions,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 const ArticleIndexDetails = ({ navigation, article }) => {
   return (
     <TouchableOpacity
       onPress={() => {
-        navigation.navigate('ArticleShow', { article: article })
+        navigation.navigate("ArticleShow", { article: article });
       }}
-      >
-      <Image 
-      source={{ uri: article.image }} 
-      style={styles.image} 
-      />
+    >
+      <Image source={{ uri: article.image }} style={styles.image} />
       <View style={styles.card}>
-        <Text style={styles.title}>
-          {article.title}
-          </Text>
-        <Text style={styles.subtitle}>
-        {article.category}
-        </Text>
+        <Text style={styles.title}>{article.title}</Text>
+        <Text style={styles.subtitle}>{article.category}</Text>
       </View>
     </TouchableOpacity>
   );

@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const MainScreen = ({navigation}) => {
+const MainScreen = ({ navigation }) => {
   const { articles } = useSelector((state) => state);
   useEffect(() => {
     Articles.index();
@@ -23,7 +23,9 @@ const MainScreen = ({navigation}) => {
       <FlatList
         data={articles}
         keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <ArticleIndexDetails navigation={navigation} article={item}/>}
+        renderItem={({ item }) => (
+          <ArticleIndexDetails navigation={navigation} article={item} />
+        )}
       />
     </View>
   );
