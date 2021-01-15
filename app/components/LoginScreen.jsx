@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const authenticateUser = () => {
+
+  }
 
   return (
     <View style={{ flex: 1, margin: 10 }}>
@@ -18,6 +21,11 @@ const LoginScreen = () => {
         placeholder="Password"
         style={styles.input}
         onChangeText={() => setPassword(text)}
+      />
+      <Button 
+        title="Log in"
+        color="purple"
+        onPress={() => authenticateUser()}
       />
     </View>
   );
