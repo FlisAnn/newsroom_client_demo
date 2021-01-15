@@ -1,6 +1,6 @@
 import axios from "axios";
 import AsyncStorage from "@react-native-community/async-storage";
-​
+
 const apiUrl =
   process.env.NODE_ENV === "development" && "http://localhost:3000";
 const defaultOptions = {
@@ -9,7 +9,7 @@ const defaultOptions = {
   debug: false,
   useRoles: false,
 };
-​
+
 const storage = AsyncStorage;
 const storageKey = "auth-storage";
 const storageRoleKey = "auth-roles";
@@ -39,7 +39,7 @@ class Auth {
         : "/validate_token"
     }`;
     axios.interceptors.response.use(
-      (response) => {
+      response => {
         if (Array.isArray(response.data)) {
           return {
             ...response,
@@ -48,7 +48,7 @@ class Auth {
         }
         return response;
       },
-      (error) => {
+      error => {
         return Promise.reject(error);
       }
     );
@@ -56,11 +56,11 @@ class Auth {
   test() {
     axios
       .get(this.signInUrl)
-      .then((response) => {
+      .then(response => {
         console.log(`Connection success: `);
         console.table(response.data);
       })
-      .catch((error) => {
+      .catch(error => {
         if (error.response) {
           console.log("Connection success");
         } else {
