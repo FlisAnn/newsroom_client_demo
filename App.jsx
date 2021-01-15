@@ -6,6 +6,7 @@ import MainScreen from "./app/components/MainScreen";
 import ArticleShow from "./app/components/ArticleShow";
 import { Button } from "react-native";
 import LoginScreen from "./app/components/LoginScreen";
+import { Ionicons } from "@expo/vector-icons";
 
 const Stack = createStackNavigator();
 
@@ -17,12 +18,16 @@ const App = () => {
         <Stack.Screen
           name="Start"
           component={MainScreen}
-          options={{
+          options={props => ({
             headerRight: () => {
               return (
-                <Button
-                  title="Click me"
-                  onPress={navigation.navigate("Login")}
+                <Ionicons
+                  name="ios-person-circle-outline"
+                  size={24}
+                  color="white"
+                  onPress={() => {
+                    props.navigation.navigate("Login")  }}
+                    style={{marginRight: 10}}
                 />
               );
             },
@@ -34,11 +39,11 @@ const App = () => {
               color: "white",
               fontSize: 23,
             },
-          }}
+          })}
         />
         <Stack.Screen name="ArticleShow" component={ArticleShow} />
 
-        <Stack.Screen name="login" component={LoginScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
