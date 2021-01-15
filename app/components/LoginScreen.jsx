@@ -14,13 +14,13 @@ const LoginScreen = () => {
       <TextInput
         placeholder="Email"
         style={styles.input}
-        onChangeText={() => setEmail(text)}
+        onChangeText={(text) => setEmail(text)}
       />
       <TextInput
         secureTextEntry={true}
         placeholder="Password"
         style={styles.input}
-        onChangeText={() => setPassword(text)}
+        onChangeText={(text) => setPassword(text)}
       />
       <Button 
         title="Log in"
