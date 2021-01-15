@@ -9,11 +9,12 @@ const LoginScreen = () => {
     <View style={{ flex: 1, margin: 10 }}>
       <Text>Login screen</Text>
       <TextInput
-        placeholder="Password"
+        placeholder="Email"
         style={styles.input}
         onChangeText={() => setEmail(text)}
       />
       <TextInput
+        secureTextEntry={true}
         placeholder="Password"
         style={styles.input}
         onChangeText={() => setPassword(text)}
