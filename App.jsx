@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import MainScreen from "./app/components/MainScreen";
 import ArticleShow from "./app/components/ArticleShow";
 import { Button } from "react-native";
+import LoginScreen from "./app/components/LoginScreen";
 
 const Stack = createStackNavigator();
 
@@ -18,7 +19,12 @@ const App = () => {
           component={MainScreen}
           options={{
             headerRight: () => {
-             return <Button title="Click me" />;
+              return (
+                <Button
+                  title="Click me"
+                  onPress={navigation.navigate("Login")}
+                />
+              );
             },
             title: appTitle,
             headerStyle: {
@@ -31,6 +37,8 @@ const App = () => {
           }}
         />
         <Stack.Screen name="ArticleShow" component={ArticleShow} />
+
+        <Stack.Screen name="login" component={LoginScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
